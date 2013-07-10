@@ -1,0 +1,9 @@
+<h2>Add post</h2>
+
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :content, as: :text %>
+
+  <%= f.submit "Add post" %>
+<% end %>

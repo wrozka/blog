@@ -9,11 +9,22 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
+gem 'bootstrap-sass'
+gem 'simple_form'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 group :test do
+  gem 'bogus'
+  gem 'shoulda-matchers'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl'
+
+  gem 'guard-rspec'
+  gem 'libnotify'
+  gem 'growl'
 end
