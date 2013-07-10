@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.published
+    @comment = Comment.new
   end
 
   def new

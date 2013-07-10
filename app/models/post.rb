@@ -3,7 +3,9 @@ class Post < ActiveRecord::Base
   validates :author, presence: true
   validates :content, presence: true
 
+  has_many :comments
+
   def self.published
-    all.order('created_at DESC')
+    all.order('created_at DESC').includes(:comments)
   end
 end
