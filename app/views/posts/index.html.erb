@@ -1,10 +1,15 @@
 <div class="row">
   <div class="span8">
     <% @posts.each do |post| %>
-      <div class="post">
+      <div class="post" id="post-<%= post.id %>">
         <h3><%= post.title %> by <%= post.author %></h3>
         <p><small>Published <%= time_ago_in_words(post.created_at) %> ago</small></p>
         <p><%= post.content %></p>
+        <p>Rating: <%= post.rating %></p>
+        <%= simple_form_for [post, Rating.new] do |f| %>
+          <%= f.input :value, as: :select, collection: 1..5, label: "Rate this post" %>
+          <%= f.submit "Rate post" %>
+        <% end %>
       </div>
     <% end %>
   </div>
